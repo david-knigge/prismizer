@@ -4,10 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/jsRapKnob.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" href="css/jsRapKnob.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700&display=swap" rel="stylesheet">
+    
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello world</h1>
-    <script src="index.js"></script>
+
+    <div class="prismizer">
+
+        <div class="prismizer-header">
+            <h1>Prismizer v0.1</h1>
+        </div>
+
+        <div class="prismizer-body">
+
+            <div class="osc-track">
+
+                <div class="oscillators-container">
+                    
+                    <div class="osc-container" id="osc-1">
+                        <div class"osc-vc">
+                            <div id="osc-1-vol-knob"></div>
+                        </div>
+                        <ul class="osc-source-selection">
+                                <li class="osc-source" ><input id="sine-1" type="radio" name="osc-1-source"><label for="sine-1">sin</label></li>
+                                <li class="osc-source" ><input id="saw-1" type="radio" name="osc-1-source"><label for="saw-1">saw</label></li>
+                                <li class="osc-source" ><input id="square-1" type="radio" name="osc-1-source"><label for="square-1">squ</label></li>
+                                <li class="osc-source" ><input id="triangle-1" type="radio" name="osc-1-source"><label for="triangle-1">tri</label></li>
+                            </ul>
+                    </div>
+
+                    <div class="osc-container" id="osc-2">
+                            <div class"osc-vc">
+                                <div id="osc-2-vol-knob"></div>
+                            </div>
+                            <ul class="osc-source-selection">
+                                <li class="osc-source" ><input id="sine-1" type="radio" name="osc-1-source"><label for="sine-1">sin</label></li>
+                                <li class="osc-source" ><input id="saw-1" type="radio" name="osc-1-source"><label for="saw-1">saw</label></li>
+                                <li class="osc-source" ><input id="square-1" type="radio" name="osc-1-source"><label for="square-1">squ</label></li>
+                                <li class="osc-source" ><input id="triangle-1" type="radio" name="osc-1-source"><label for="triangle-1">tri</label></li>
+                            </ul>
+                    </div>
+                    
+                    <div class="osc-container" id="osc-3">
+                            <div class="osc-waveform">
+                                
+                            </div>
+                            <div class"osc-vc">
+                                <div id="osc-3-vol-knob"></div>
+                            </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="mod-track">
+
+                <div class="mod-track-left">
+
+                </div>
+
+                <div class="mod-track-right">
+
+                    <div class="master-vol-container">
+                        <div id="master-vol-knob"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+    $(function () {
+        $("#master-vol-knob").jsRapKnob({
+            "caption": "master volume"
+        });
+        $("#osc-1-vol-knob").jsRapKnob({
+            "caption": "oscillator 1"
+        });
+        $("#osc-2-vol-knob").jsRapKnob({
+            "caption": "oscillator 2"
+        });
+        $("#osc-3-vol-knob").jsRapKnob({
+            "caption": "oscillator 3"
+        });
+    });
+    </script>
+    <script src="js/prismizer.js"></script>
 </body>
 </html>
