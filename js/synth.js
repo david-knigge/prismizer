@@ -3,10 +3,11 @@
 ctx = new AudioContext();
 
 class synth {
-    constructor(def_amp=[0.6, 0.0, 0.0], def_wave=["sine", "sine", "sine"], def_det=[0, 12, -12]) {
+    constructor(def_amp=[0.6, 0.0, 0.0], def_wave=["sine", "sine", "sine"], def_det=[0, 0, 0]) {
         
         this.oscs = [];
         this.oscs_gains = [];
+        this.oscs_detunes = def_det;
         this.osc_filts = [];
 
         this.limiter = ctx.createGain();
@@ -45,6 +46,18 @@ class synth {
 
     set_osc_source(osc_index, type) {
         this.oscs[osc_index].type = type;
+    }
+
+    // set osc freq to value
+    set_osc_freq(osc_index, val=440) {
+        this.oscs_detunes[osc_index] = 0;
+        this.oscs[osc_index].detune.setValueAtTime(0, ctx.currentTime);
+    }
+
+    // detune osc freq
+    detune_osc(osc_index, det_val) {
+        this.oscs_detunes[osc_index] += det_val;
+        this.oscs[osc_index].detune.setValueAtTime(this.oscs_detunes[osc_index], ctx.currentTime);
     }
 
 }

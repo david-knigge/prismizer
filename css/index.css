@@ -90,10 +90,13 @@ h1 {
     background-color: lightyellow;
 }
 
-.osc-radio-button input:checked ~ label {
+.osc-radio-button label:focus {
     background-color: yellow;
 }
 
+.osc-radio-button input:checked ~ label {
+    background-color: yellow;
+}
 
 .osc-container p {
     margin-block-start: 0px;
@@ -118,12 +121,17 @@ h1 {
     flex-grow: 1;
 }
 
-.mod-track {
+.track {
     display: flex;
     background: lightgray;
+    border-bottom: solid 2px #000;
 }
 
-.mod-track-left {
+.track:last-of-type{
+    border-bottom: 0px;
+}
+
+.track-left {
     flex-grow: 1;
     border-right: 2px solid #000;
 }

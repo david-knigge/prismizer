@@ -39,9 +39,9 @@
                             <div id="osc-1-vol-knob"></div>
                         </div>
                         <ul class="osc-det-selection">
-                            <li class="osc-radio-button detune" ><input id="12-1" type="radio" name="osc-1-det" checked="checked"><label for="12-1"><p>+1200</p></label></li>
-                            <li class="osc-radio-button detune" ><input id="0-1" type="radio" name="osc-1-det"><label for="0-1"><p>+0000</p></label></li>
-                            <li class="osc-radio-button detune" ><input id="-12-1" type="radio" name="osc-1-det"><label for="-12-1"><p>-1200</p></label></li>
+                            <li class="osc-radio-button detune" ><input id="12-1" type="button" name="osc-1-det" ><label for="12-1" tabindex="1"><p>+200</p></label></li>
+                            <li class="osc-radio-button detune" ><input id="0-1" type="button" name="osc-1-det"><label for="0-1" tabindex="1"><p>rset</p></label></li>
+                            <li class="osc-radio-button detune" ><input id="-12-1" type="button" name="osc-1-det"><label for="-12-1" tabindex="1"><p>-200</p></label></li>
                         </ul>
                         <div class="output-jack">
                             <span class="jack-dot"></span>
@@ -60,9 +60,9 @@
                                 <div id="osc-2-vol-knob"></div>
                             </div>
                             <ul class="osc-det-selection">
-                                    <li class="osc-radio-button detune" ><input id="12-2" type="radio" name="osc-2-det"><label for="12-2"><p>+1200</p></label></li>
-                                    <li class="osc-radio-button detune" ><input id="0-2" type="radio" name="osc-2-det"><label for="0-2"><p>+0000</p></label></li>
-                                    <li class="osc-radio-button detune" ><input id="-12-2" type="radio" name="osc-2-det" checked="checked"><label for="-12-2"><p>-1200</p></label></li>
+                                <li class="osc-radio-button detune" ><input id="12-2" type="button" name="osc-2-det"><label for="12-2" tabindex="1"><p>+200</p></label></li>
+                                <li class="osc-radio-button detune" ><input id="0-2" type="button" name="osc-2-det"><label for="0-2" tabindex="2"><p>rset</p></label></li>
+                                <li class="osc-radio-button detune" ><input id="-12-2" type="button" name="osc-2-det" ><label for="-12-2" tabindex="3"><p>-200</p></label></li>
                             </ul>
                             <div class="output-jack">
                                 <span class="jack-dot"></span>
@@ -81,9 +81,9 @@
                             <div id="osc-3-vol-knob"></div>
                         </div>
                         <ul class="osc-det-selection">
-                            <li class="osc-radio-button detune" ><input id="12-3" type="radio" name="osc-3-det" checked="checked"><label for="12-3"><p>+1200</p></label></li>
-                            <li class="osc-radio-button detune" ><input id="0-3" type="radio" name="osc-3-det"><label for="0-3"><p>+0000</p></label></li>
-                            <li class="osc-radio-button detune" ><input id="-12-3" type="radio" name="osc-3-det"><label for="-12-3"><p>-1200</p></label></li>
+                            <li class="osc-radio-button detune" ><input id="12-3" type="button" name="osc-3-det" ><label for="12-3"tabindex="1"><p>+200</p></label></li>
+                            <li class="osc-radio-button detune" ><input id="0-3" type="button" name="osc-3-det"><label for="0-3"tabindex="1"><p>rset</p></label></li>
+                            <li class="osc-radio-button detune" ><input id="-12-3" type="button" name="osc-3-det"><label for="-12-3"tabindex="1"><p>-200</p></label></li>
                         </ul>
                         <div class="output-jack">
                             <span class="jack-dot"></span>
@@ -95,20 +95,30 @@
 
             </div>
 
-            <div class="mod-track">
+            <div class="mod track">
 
-                <div class="mod-track-left">
+                <div class="mod track-left">
+                    mod track left
+                </div>
+
+                <div class="mod track-right">
+                    mod track right
+                </div>
+
+            </div>
+
+            <div class="seq track">
+                <div class="seq track-left">
 
                 </div>
 
-                <div class="mod-track-right">
+                <div class="seq track-right">
 
                     <div class="master-vol-container">
                         <div id="master-vol-knob"></div>
                     </div>
 
                 </div>
-
             </div>
 
         </div>
@@ -128,26 +138,30 @@
         }
 
         // Change source waveform
-        $(".source").click(function(){
+        $(".source").click(function(evt){
             types = ["sine", "sawtooth", "square", "triangle"];
             osc_index = $(this).parent().parent().index();
             synth.set_osc_source(osc_index, types[$(this).index()]);
         });
 
-        // Change osc detune
-        $(".detune").click(function(){
-            osc_index = $(".oscillators-container").index($(this).parent().parent().parent());
+        // Change osc freq
+        $(".detune").click(function(evt){
+            evt.stopPropagation();
+            evt.preventDefault();
+
+            osc_index = $(this).parent().parent().index();
+            tuning_action = $(this).index();
+            if (!tuning_action) {
+                // +200 cents
+                synth.detune_osc(osc_index, 200);
+            } else if (tuning_action == 1) {
+                // reset to 440Hz
+                synth.set_osc_freq(osc_index);
+            } else {
+                // -200 cents
+                synth.detune_osc(osc_index, -200);
+            }
         })
-
-        function set_osc_source(src) {
-            osc_index = $(".oscillators-container").index($(this).parent().parent().parent());
-            console.log(osc_index);
-        }
-
-
-        function set_osc_detune(det) {
-
-        }
 
         $("#master-vol-knob").jsRapKnob({
             "caption": "master volume",
