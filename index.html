@@ -16,13 +16,13 @@
 </head>
 <body>
 
-    <div class="prismizer">
+    <div class="synth">
 
-        <div class="prismizer-header">
-            <h1>Prismizer v0.1</h1>
+        <div class="synth-header">
+            <h1>Synth! v0.1</h1>
         </div>
 
-        <div class="prismizer-body">
+        <div class="synth-body">
 
             <div class="osc-track">
 
@@ -114,24 +114,24 @@
         </div>
 
     </div>
-    <script src="js/prismizer.js"></script>
+    <script src="js/synth.js"></script>
     <script>
     $(function () {
 
 
         def_amp=[0.5, 0.0, 0.0];
-        prismizer = new Prismizer(def_amp);
+        synth = new synth(def_amp);
 
         function set_osc_vol(value) {
             osc_index = $(this).parent().parent().index();
-            prismizer.set_osc_volume(osc_index, value);
+            synth.set_osc_volume(osc_index, value);
         }
 
         // Change source waveform
         $(".source").click(function(){
             types = ["sine", "sawtooth", "square", "triangle"];
             osc_index = $(this).parent().parent().index();
-            prismizer.set_osc_source(osc_index, types[$(this).index()]);
+            synth.set_osc_source(osc_index, types[$(this).index()]);
         });
 
         // Change osc detune
@@ -153,7 +153,7 @@
             "caption": "master volume",
             "position": 0.0,
             "onChange": function (value) {
-                prismizer.set_master_volume(value);
+                synth.set_master_volume(value);
             }
         });
         $("#osc-1-vol-knob").jsRapKnob({

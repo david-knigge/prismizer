@@ -1,8 +1,8 @@
-// Prismizer
+// synth
 
 ctx = new AudioContext();
 
-class Prismizer {
+class synth {
     constructor(def_amp=[0.6, 0.0, 0.0], def_wave=["sine", "sine", "sine"], def_det=[0, 12, -12]) {
         
         this.oscs = [];

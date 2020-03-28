@@ -2,7 +2,7 @@ h1 {
     font-weight: normal;
 }
 
-.prismizer {
+.synth {
     background: lightgray;
     width: 1000px;
     display: flex;
@@ -13,14 +13,14 @@ h1 {
     font-size: 8pt;
 }
 
-.prismizer-header {
+.synth-header {
     height: fit-content;
     border-bottom: 2px solid #000;
     padding-left: 8px;
     box-sizing: content-box;
 }
 
-.prismizer-body {
+.synth-body {
     display: flex;
     flex-direction: column;
 }
