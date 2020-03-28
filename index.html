@@ -29,36 +29,66 @@
                 <div class="oscillators-container">
                     
                     <div class="osc-container" id="osc-1">
+                        <ul class="osc-source-selection">
+                            <li class="osc-radio-button source" ><input id="sine-1" type="radio" name="osc-1-source"checked="checked"><label for="sine-1">sin</label></li>
+                            <li class="osc-radio-button source" ><input id="saw-1" type="radio" name="osc-1-source"><label for="saw-1">saw</label></li>
+                            <li class="osc-radio-button source" ><input id="square-1" type="radio" name="osc-1-source"><label for="square-1">squ</label></li>
+                            <li class="osc-radio-button source" ><input id="triangle-1" type="radio" name="osc-1-source"><label for="triangle-1">tri</label></li>
+                        </ul>
                         <div class"osc-vc">
                             <div id="osc-1-vol-knob"></div>
                         </div>
-                        <ul class="osc-source-selection">
-                                <li class="osc-source" ><input id="sine-1" type="radio" name="osc-1-source"><label for="sine-1">sin</label></li>
-                                <li class="osc-source" ><input id="saw-1" type="radio" name="osc-1-source"><label for="saw-1">saw</label></li>
-                                <li class="osc-source" ><input id="square-1" type="radio" name="osc-1-source"><label for="square-1">squ</label></li>
-                                <li class="osc-source" ><input id="triangle-1" type="radio" name="osc-1-source"><label for="triangle-1">tri</label></li>
-                            </ul>
+                        <ul class="osc-det-selection">
+                            <li class="osc-radio-button detune" ><input id="12-1" type="radio" name="osc-1-det" checked="checked"><label for="12-1"><p>+1200</p></label></li>
+                            <li class="osc-radio-button detune" ><input id="0-1" type="radio" name="osc-1-det"><label for="0-1"><p>+0000</p></label></li>
+                            <li class="osc-radio-button detune" ><input id="-12-1" type="radio" name="osc-1-det"><label for="-12-1"><p>-1200</p></label></li>
+                        </ul>
+                        <div class="output-jack">
+                            <span class="jack-dot"></span>
+                            <p>out</p>
+                        </div>
                     </div>
 
                     <div class="osc-container" id="osc-2">
+                            <ul class="osc-source-selection">
+                                <li class="osc-radio-button source" ><input id="sine-2" type="radio" name="osc-2-source" checked="checked"><label for="sine-2"><p>sin</p></label></li>
+                                <li class="osc-radio-button source" ><input id="saw-2" type="radio" name="osc-2-source"><label for="saw-2">saw</label></li>
+                                <li class="osc-radio-button source" ><input id="square-2" type="radio" name="osc-2-source"><label for="square-2">squ</label></li>
+                                <li class="osc-radio-button source" ><input id="triangle-2" type="radio" name="osc-2-source"><label for="triangle-2">tri</label></li>
+                            </ul>
                             <div class"osc-vc">
                                 <div id="osc-2-vol-knob"></div>
                             </div>
-                            <ul class="osc-source-selection">
-                                <li class="osc-source" ><input id="sine-1" type="radio" name="osc-1-source"><label for="sine-1">sin</label></li>
-                                <li class="osc-source" ><input id="saw-1" type="radio" name="osc-1-source"><label for="saw-1">saw</label></li>
-                                <li class="osc-source" ><input id="square-1" type="radio" name="osc-1-source"><label for="square-1">squ</label></li>
-                                <li class="osc-source" ><input id="triangle-1" type="radio" name="osc-1-source"><label for="triangle-1">tri</label></li>
+                            <ul class="osc-det-selection">
+                                    <li class="osc-radio-button detune" ><input id="12-2" type="radio" name="osc-2-det"><label for="12-2"><p>+1200</p></label></li>
+                                    <li class="osc-radio-button detune" ><input id="0-2" type="radio" name="osc-2-det"><label for="0-2"><p>+0000</p></label></li>
+                                    <li class="osc-radio-button detune" ><input id="-12-2" type="radio" name="osc-2-det" checked="checked"><label for="-12-2"><p>-1200</p></label></li>
                             </ul>
+                            <div class="output-jack">
+                                <span class="jack-dot"></span>
+                                <p>out</p>
+                            </div>
                     </div>
                     
                     <div class="osc-container" id="osc-3">
-                            <div class="osc-waveform">
-                                
-                            </div>
-                            <div class"osc-vc">
-                                <div id="osc-3-vol-knob"></div>
-                            </div>
+                        <ul class="osc-source-selection">
+                            <li class="osc-radio-button source" ><input id="sine-3" type="radio" name="osc-3-source" checked="checked"><label for="sine-3">sin</label></li>
+                            <li class="osc-radio-button source" ><input id="saw-3" type="radio" name="osc-3-source"><label for="saw-3">saw</label></li>
+                            <li class="osc-radio-button source" ><input id="square-3" type="radio" name="osc-3-source"><label for="square-3">squ</label></li>
+                            <li class="osc-radio-button source" ><input id="triangle-3" type="radio" name="osc-3-source"><label for="triangle-3">tri</label></li>
+                        </ul>
+                        <div class"osc-vc">
+                            <div id="osc-3-vol-knob"></div>
+                        </div>
+                        <ul class="osc-det-selection">
+                            <li class="osc-radio-button detune" ><input id="12-3" type="radio" name="osc-3-det" checked="checked"><label for="12-3"><p>+1200</p></label></li>
+                            <li class="osc-radio-button detune" ><input id="0-3" type="radio" name="osc-3-det"><label for="0-3"><p>+0000</p></label></li>
+                            <li class="osc-radio-button detune" ><input id="-12-3" type="radio" name="osc-3-det"><label for="-12-3"><p>-1200</p></label></li>
+                        </ul>
+                        <div class="output-jack">
+                            <span class="jack-dot"></span>
+                            <p>out</p>
+                        </div>
                     </div>
 
                 </div>
@@ -84,22 +114,65 @@
         </div>
 
     </div>
+    <script src="js/prismizer.js"></script>
     <script>
     $(function () {
+
+
+        def_amp=[0.5, 0.0, 0.0];
+        prismizer = new Prismizer(def_amp);
+
+        function set_osc_vol(value) {
+            osc_index = $(this).parent().parent().index();
+            prismizer.set_osc_volume(osc_index, value);
+        }
+
+        // Change source waveform
+        $(".source").click(function(){
+            types = ["sine", "sawtooth", "square", "triangle"];
+            osc_index = $(this).parent().parent().index();
+            prismizer.set_osc_source(osc_index, types[$(this).index()]);
+        });
+
+        // Change osc detune
+        $(".detune").click(function(){
+            osc_index = $(".oscillators-container").index($(this).parent().parent().parent());
+        })
+
+        function set_osc_source(src) {
+            osc_index = $(".oscillators-container").index($(this).parent().parent().parent());
+            console.log(osc_index);
+        }
+
+
+        function set_osc_detune(det) {
+
+        }
+
         $("#master-vol-knob").jsRapKnob({
-            "caption": "master volume"
+            "caption": "master volume",
+            "position": 0.0,
+            "onChange": function (value) {
+                prismizer.set_master_volume(value);
+            }
         });
         $("#osc-1-vol-knob").jsRapKnob({
-            "caption": "oscillator 1"
+            "caption": "oscillator 1",
+            "position": 0.5,
+            "onChange": set_osc_vol
         });
         $("#osc-2-vol-knob").jsRapKnob({
-            "caption": "oscillator 2"
+            "caption": "oscillator 2",
+            "position": 0.0,
+            "onChange": set_osc_vol
         });
         $("#osc-3-vol-knob").jsRapKnob({
-            "caption": "oscillator 3"
+            "caption": "oscillator 3",
+            "position": 0.0,
+            "onChange": set_osc_vol
         });
+        
     });
     </script>
-    <script src="js/prismizer.js"></script>
 </body>
 </html>
